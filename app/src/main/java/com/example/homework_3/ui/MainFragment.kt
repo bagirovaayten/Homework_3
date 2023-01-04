@@ -58,5 +58,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 Toast.makeText(requireContext(), "Note deleted", Toast.LENGTH_SHORT).show()
             }
         }
+        adapter.onItemClick={
+            val action = MainFragmentDirections.actionMainFragmentToAddNoteFragment(it)
+            findNavController().navigate(action)
+
+        }
     }
 }

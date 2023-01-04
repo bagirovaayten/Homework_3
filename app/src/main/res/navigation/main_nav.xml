@@ -9,14 +9,20 @@
         android:id="@+id/mainFragment"
         android:name="com.example.homework_3.ui.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_addNoteFragment"
             app:destination="@id/addNoteFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/addNoteFragment"
         android:name="com.example.homework_3.ui.AddNoteFragment"
         android:label="fragment_add_note"
-        tools:layout="@layout/fragment_add_note" />
+        tools:layout="@layout/fragment_add_note">
+        <argument
+            android:name="id"
+            android:defaultValue="1"
+            app:argType="integer" />
+    </fragment>
 </navigation>

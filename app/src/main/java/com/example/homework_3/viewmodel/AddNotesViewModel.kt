@@ -15,10 +15,15 @@ class AddNotesViewModel @Inject constructor(private val repo: NoteRepo) : ViewMo
     private val _note = MutableLiveData<Note>()
     val note: LiveData<Note> = _note
 
-
     fun addNote(note: Note) {
         viewModelScope.launch {
             repo.insert(note)
+        }
+    }
+
+    fun getNoteById(id: Int) {
+        viewModelScope.launch {
+            repo.getId(id)
         }
     }
 }
